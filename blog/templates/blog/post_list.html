@@ -8,12 +8,17 @@
       <div>
         <h1><a href=""> Hello out there</a></h1>
       </div>
-      
+       
+        {% for post in posts%}
       <div>  
-        <p> Hi there, published today.</p>
-        <h2><a href="">My first post</a></h2>
+        <p> published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }} </p>
+        <p>{{ post.created_date }} </p>
+        <p>{{ post.author }} </p>
       </div>
-      
-        <p> This works. </p>
+        
+        {% endfor %}
+    
     </body>
 </html>
